@@ -6,6 +6,7 @@ public class time_manager : MonoBehaviour
 {
     public static time_manager instance;
     public float sec;
+    public bool pause = false;
 
     void Awake()
     {
@@ -20,13 +21,17 @@ public class time_manager : MonoBehaviour
 
     void Start()
     {
+        pause = false;
         sec = 0;
     }
 
     void Update()
     {
-        sec += Time.deltaTime;
-        //Debug.Log(sec);
-        transform.rotation = Quaternion.Euler(0, 0, sec - 90);
+        if (!pause)
+        {
+            sec += Time.deltaTime;
+            //Debug.Log(sec);
+            transform.rotation = Quaternion.Euler(0, 0, sec - 90);
+        }
     }
 }
