@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 126422174ff58e44fa5cece30010daef
+guid: 04e6d005745808f4fa34f1e8fb1ab89b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass_0
+      name: house_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
-        width: 160
-        height: 15
+        y: 157
+        width: 158
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4960e7fdbab5a874ebb61505ff7ecbc6
-      internalID: -1390204730
+      spriteID: 712a838b2c0b22049afe0ea49a4caec1
+      internalID: 1408463077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_1
+      name: house_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 160
-        height: 20
+        y: 80
+        width: 133
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +132,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120eb601e86f22542839f0f6b88f7122
-      internalID: -51390070
+      spriteID: 34a629e22b9b8624681880a1396cbba5
+      internalID: 1046697592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 133
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4023e45d982a9ce488fa88b05e28e7a3
+      internalID: 1636196920
       vertices: []
       indices: 
       edges: []
@@ -162,8 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grass_0: -1390204730
-      grass_1: -51390070
+      house_0: 1408463077
+      house_1: 1046697592
+      house_2: 1636196920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

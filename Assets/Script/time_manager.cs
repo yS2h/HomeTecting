@@ -21,7 +21,7 @@ public class time_manager : MonoBehaviour {
 
     void Update() {
         sec += Time.deltaTime;
-        Debug.Log(sec);
+        //Debug.Log(sec);
         transform.rotation = Quaternion.Euler(0, 0, sec - 90);
     }
 }
