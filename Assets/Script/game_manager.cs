@@ -4,23 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class game_manager : MonoBehaviour {
+public class game_manager : MonoBehaviour
+{
     public TMP_Text doubleButtonText;
 
-    void Start() {
+    void Start()
+    {
         Time.timeScale = 1;
         doubleButtonText.text = "1X";
     }
 
-    void Update() {
-        
+    void Update()
+    {
+
     }
 
-    public void pushButton() {
-        if (Time.timeScale == 1) {
+    public void pushButton()
+    {
+        if (Time.timeScale == 1)
+        {
             Time.timeScale = 2;
             doubleButtonText.text = "2X";
-        } else if (Time.timeScale == 2) {
+        }
+        else if (Time.timeScale == 2)
+        {
             Time.timeScale = 1;
             doubleButtonText.text = "1X";
         }

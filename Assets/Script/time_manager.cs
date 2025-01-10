@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class time_manager : MonoBehaviour {
+public class time_manager : MonoBehaviour
+{
     public static time_manager instance;
     public float sec;
 
-    void Awake() {
-        if (instance != null) {
+    void Awake()
+    {
+        if (instance != null)
+        {
             Destroy(gameObject);
             return;
         }
@@ -15,11 +18,13 @@ public class time_manager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start() {
+    void Start()
+    {
         sec = 0;
     }
 
-    void Update() {
+    void Update()
+    {
         sec += Time.deltaTime;
         //Debug.Log(sec);
         transform.rotation = Quaternion.Euler(0, 0, sec - 90);
