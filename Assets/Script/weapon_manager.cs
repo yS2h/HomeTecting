@@ -6,11 +6,12 @@ using TMPro;
 
 public class weapon_manager : MonoBehaviour
 {
-    int[] weapons = new int[11];
+    bool[] weapons = new bool[11];
     private bool setWeapon = false;
     private GameObject storageDoor, keyF;
     private GameObject defaultCanvas, storageCanvas;
     public TMP_Text closeButtonText;
+    public TMP_Text[] weaponButtonText = new TMP_Text[11];
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class weapon_manager : MonoBehaviour
         {
             keyF.gameObject.SetActive(true);
             setWeapon = true;
+            //Debug.Log(money_manager.instance.money);
         }
     }
 
@@ -52,10 +54,21 @@ public class weapon_manager : MonoBehaviour
         }
     }
 
-    public void pushButton()
+    public void pushCloseButton()
     {
         storageCanvas.SetActive(false);
         defaultCanvas.SetActive(true);
         time_manager.instance.pause = false;
+    }
+
+    public void pushGarlicButton()
+    {
+        if (money_manager.instance.money > 3000 && !weapons[0])
+        {
+            money_manager.instance.money -= 3000;
+            money_manager.instance.moneyText2.text = "" + money_manager.instance.money;
+            weapons[0] = true;
+            weaponButtonText[0].text = "SOLD OUT";
+        }
     }
 }

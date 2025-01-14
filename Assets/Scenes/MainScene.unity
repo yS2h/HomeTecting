@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 462075458}
   - component: {fileID: 462075459}
   m_Layer: 0
-  m_Name: player_0
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,6 +545,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeButtonText: {fileID: 0}
+  weaponButtonText:
+  - {fileID: 1866796301}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!61 &462075459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -908,7 +920,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 462075458}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
-        m_MethodName: pushButton
+        m_MethodName: pushCloseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1122,7 +1134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 1498437449}
   moneyText2: {fileID: 997369211}
-  money: 1000
+  money: 3000
 --- !u!1 &886709190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1289,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 50, y: -74}
-  m_SizeDelta: {x: 100, y: 30}
+  m_SizeDelta: {x: 140, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932010591
 MonoBehaviour:
@@ -1323,13 +1335,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 932010589}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 462075458}
+        m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
+        m_MethodName: pushGarlicButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2652,6 +2664,7 @@ GameObject:
   - component: {fileID: 1866796300}
   - component: {fileID: 1866796302}
   - component: {fileID: 1866796301}
+  - component: {fileID: 1866796303}
   m_Layer: 5
   m_Name: garlic_button_text
   m_TagString: Untagged
@@ -2725,13 +2738,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontSizeMin: 10
+  m_fontSizeMax: 18
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2775,6 +2788,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866796299}
   m_CullTransparentMesh: 1
+--- !u!114 &1866796303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866796299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!1 &1886129710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +2936,7 @@ GameObject:
   - component: {fileID: 1927890020}
   - component: {fileID: 1927890019}
   m_Layer: 0
-  m_Name: grass_0
+  m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
