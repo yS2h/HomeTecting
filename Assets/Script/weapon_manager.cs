@@ -7,6 +7,7 @@ using TMPro;
 public class weapon_manager : MonoBehaviour
 {
     bool[] weapons = new bool[11];
+    int[] prices = new int[11] {3000, 5000, 7000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000};
     private bool setWeapon = false;
     private GameObject storageDoor, keyF;
     private GameObject defaultCanvas, storageCanvas;
@@ -61,14 +62,14 @@ public class weapon_manager : MonoBehaviour
         time_manager.instance.pause = false;
     }
 
-    public void pushGarlicButton()
+    public void pushWeaponButton(int n)
     {
-        if (money_manager.instance.money > 3000 && !weapons[0])
+        if (money_manager.instance.money > prices[n] && !weapons[n])
         {
-            money_manager.instance.money -= 3000;
+            money_manager.instance.money -= prices[n];
             money_manager.instance.moneyText2.text = "" + money_manager.instance.money;
-            weapons[0] = true;
-            weaponButtonText[0].text = "SOLD OUT";
+            weapons[n] = true;
+            weaponButtonText[n].text = "SOLD OUT";
         }
     }
 }
