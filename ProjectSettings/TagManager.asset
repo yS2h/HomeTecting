@@ -6,6 +6,7 @@ TagManager:
   tags:
   - storage
   - house
+  - weaponPoint1
   layers:
   - Default
   - TransparentFX
