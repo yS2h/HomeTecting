@@ -8,6 +8,8 @@ public class game_manager : MonoBehaviour
 {
     public TMP_Text doubleButtonText;
     private GameObject defaultCanvas, pauseCanvas;
+    private GameObject nightSky, nightText;
+    private bool isNightActive = false; 
 
     void Start()
     {
@@ -15,13 +17,38 @@ public class game_manager : MonoBehaviour
         doubleButtonText.text = "1X";
         defaultCanvas = GameObject.Find("default_canvas");
         pauseCanvas = GameObject.Find("pause_canvas");
+        nightSky = GameObject.Find("night_sky");
+        nightText = GameObject.Find("night_text");
         defaultCanvas.SetActive(true);
         pauseCanvas.SetActive(false);
+        nightSky.SetActive(false);
+        nightText.SetActive(false);
     }
 
     void Update()
     {
+        if (time_manager.instance.night)
+        {
+            nightSky.SetActive(true);
 
+            if (!isNightActive)
+            {
+                isNightActive = true; 
+                StartCoroutine(ShowNightText()); 
+            }
+        }
+        else
+        {
+            nightSky.SetActive(false);
+            isNightActive = false; 
+        }
+    }
+
+    IEnumerator ShowNightText()
+    {
+        nightText.SetActive(true); 
+        yield return new WaitForSeconds(3); 
+        nightText.SetActive(false); 
     }
 
     public void pushDoubleButton()
@@ -31,7 +58,7 @@ public class game_manager : MonoBehaviour
             Time.timeScale = 2;
             doubleButtonText.text = "2X";
         }
-        else if (Time.timeScale == 2)
+        else 
         {
             Time.timeScale = 1;
             doubleButtonText.text = "1X";

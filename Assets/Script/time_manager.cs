@@ -7,6 +7,7 @@ public class time_manager : MonoBehaviour
     public static time_manager instance;
     public float sec;
     public bool pause = false;
+    public bool night = false;
 
     void Awake()
     {
@@ -30,6 +31,14 @@ public class time_manager : MonoBehaviour
         if (!pause)
         {
             sec += Time.deltaTime;
+            if (Mathf.FloorToInt(sec / 180) % 2 == 1)
+            {
+                night = true;
+            }
+            else
+            {
+                night = false;
+            }
             //Debug.Log(sec);
             transform.rotation = Quaternion.Euler(0, 0, sec - 90);
         }
