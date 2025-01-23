@@ -29,10 +29,8 @@ public class money_manager : MonoBehaviour
 
     void Update()
     {
-        if (!time_manager.instance.pause)
-        {
-            money++;
-        }
+        money += Mathf.FloorToInt(Time.timeScale);
+
         moneyText.text = "" + money;
         moneyText2.text = "" + money;
     }
