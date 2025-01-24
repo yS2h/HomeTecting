@@ -12,9 +12,9 @@ public class weapon_manager : MonoBehaviour
     int[] weaponPosition = new int[weaponNum] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 }; // 무기를 장착 할 수 있는 곳 번호
     int[] prices = new int[weaponNum] { 3000, 5000, 7000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 5000}; // 무기 가격
     private bool getWeapon = false, setWeapon = false, setPoint1 = false;
-    private GameObject storageDoor, houseDoor, keyF, pointButton;
+    private GameObject storageDoor, houseDoor, keyF, pointButton, weaponImage;
     private GameObject defaultCanvas, storageCanvas, houseCanvas, pointCanvas;
-    public TMP_Text doubleButtonText;
+    public TMP_Text doubleButtonText, weaponInfoText;
     public TMP_Text[] weaponButtonText = new TMP_Text[weaponNum];
 
     private weapon[] weaponClass = new weapon[weaponNum];
@@ -28,19 +28,19 @@ public class weapon_manager : MonoBehaviour
         protected float damagePerSec;
         protected string information;
         
-        public weapon (string _name, float _attackDamage, float _attackSpeed, int _attackDistance, float _damagePerSec)
+        public weapon (string _name, float _attackDamage, float _attackSpeed, int _attackDistance, float _damagePerSec, string _information)
         {
             name = _name;
             attackDamage = _attackDamage;
             attackSpeed = _attackSpeed;
             attackDistance = _attackDistance;
             damagePerSec = _damagePerSec;
-            information = "null";
+            information = _information;
         }
 
-        public void log()
+        public string log()
         {
-            Debug.Log(name);
+            return information;
         }
     }
 
@@ -53,6 +53,7 @@ public class weapon_manager : MonoBehaviour
         houseCanvas = GameObject.Find("house_canvas");
         pointCanvas = GameObject.Find("point_canvas");
         pointButton = GameObject.Find("point_weapon_button");
+        weaponImage = GameObject.Find("weapon_image");
         keyF = transform.GetChild(0).gameObject;
         defaultCanvas.SetActive(true);
         storageCanvas.SetActive(false);
@@ -60,18 +61,18 @@ public class weapon_manager : MonoBehaviour
         pointCanvas.SetActive(false);
         keyF.SetActive(false);
 
-        weaponClass[0] = new weapon("garlic", 10, 10, 10, 10);
-        weaponClass[1] = new weapon("ax", 10, 10, 10, 10);
-        weaponClass[2] = new weapon("shuriken", 10, 10, 10, 10);
-        weaponClass[3] = new weapon("gun", 10, 10, 10, 10);
-        weaponClass[4] = new weapon("bible", 10, 10, 10, 10);
-        weaponClass[5] = new weapon("salt", 10, 10, 10, 10);
-        weaponClass[6] = new weapon("cross", 10, 10, 10, 10);
-        weaponClass[7] = new weapon("holyWater", 10, 10, 10, 10);
-        weaponClass[8] = new weapon("redBeen", 10, 10, 10, 10);
-        weaponClass[9] = new weapon("amulet", 10, 10, 10, 10);
-        weaponClass[10] = new weapon("javelin", 10, 10, 10, 10);
-        weaponClass[11] = new weapon("flameThrower", 10, 10, 10, 10);
+        weaponClass[0] = new weapon("garlic", 10, 10, 10, 10, "i'm garlic");
+        weaponClass[1] = new weapon("ax", 10, 10, 10, 10, "i'm ax");
+        weaponClass[2] = new weapon("shuriken", 10, 10, 10, 10, "i'm shuriken");
+        weaponClass[3] = new weapon("gun", 10, 10, 10, 10, "i'm gun");
+        weaponClass[4] = new weapon("bible", 10, 10, 10, 10, "i'm bible");
+        weaponClass[5] = new weapon("salt", 10, 10, 10, 10, "i'm salt");
+        weaponClass[6] = new weapon("cross", 10, 10, 10, 10, "i'm cross");
+        weaponClass[7] = new weapon("holyWater", 10, 10, 10, 10, "i'm holy water");
+        weaponClass[8] = new weapon("redBeen", 10, 10, 10, 10, "i'm red been");
+        weaponClass[9] = new weapon("amulet", 10, 10, 10, 10, "i'm amulet");
+        weaponClass[10] = new weapon("javelin", 10, 10, 10, 10, "i'm javelin");
+        weaponClass[11] = new weapon("flameThrower", 10, 10, 10, 10, "i'm flame thrower");
     }
 
     void Update()
@@ -103,6 +104,12 @@ public class weapon_manager : MonoBehaviour
                 setPointWeapon(1);
             }
         }
+    }
+
+    public void selectWeapon(int n)
+    {
+        weaponInfoText.text = weaponClass[n].log();
+        weaponImage.transform.GetComponent<Image>().sprite = pointButton.transform.GetChild(n).GetComponent<Image>().sprite;
     }
 
     private void setPointWeapon(int n)

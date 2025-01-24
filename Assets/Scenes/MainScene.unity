@@ -203,7 +203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4840904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462075458}
+        m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
+        m_MethodName: selectWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4840904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799dcbf2719b44e8d101fcdc5e19f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleButtonText: {fileID: 0}
+  doubleButtonText: {fileID: 1977178735}
+  weaponInfoText: {fileID: 988475389}
   weaponButtonText:
   - {fileID: 1866796301}
   - {fileID: 699881312}
@@ -1770,7 +1783,7 @@ GameObject:
   - component: {fileID: 674807040}
   - component: {fileID: 674807039}
   m_Layer: 0
-  m_Name: Image
+  m_Name: weapon_info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3398,7 +3411,7 @@ GameObject:
   - component: {fileID: 988475390}
   - component: {fileID: 988475389}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: weapon_info_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3443,7 +3456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: adfa
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4116,7 +4129,7 @@ GameObject:
   - component: {fileID: 1162010174}
   - component: {fileID: 1162010173}
   m_Layer: 0
-  m_Name: Image
+  m_Name: weapon_image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4401,7 +4414,7 @@ GameObject:
   - component: {fileID: 1207782840}
   - component: {fileID: 1207782839}
   m_Layer: 0
-  m_Name: javelin (1)
+  m_Name: flame_thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6509,7 +6522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1685023932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462075458}
+        m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
+        m_MethodName: selectWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1685023932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6961,7 +6986,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1816463893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462075458}
+        m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
+        m_MethodName: selectWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1816463893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7214,7 +7251,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1843684882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462075458}
+        m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
+        m_MethodName: selectWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1843684882
 MonoBehaviour:
   m_ObjectHideFlags: 0
