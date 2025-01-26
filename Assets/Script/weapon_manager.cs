@@ -83,7 +83,6 @@ public class weapon_manager : MonoBehaviour
                 //Debug.Log("open weapon");
                 defaultCanvas.SetActive(false);
                 time_manager.instance.pause = true;
-                Time.timeScale = 0;
                 storageCanvas.SetActive(true);
             }
             else if (setWeapon)
@@ -91,7 +90,6 @@ public class weapon_manager : MonoBehaviour
                 //Debug.Log("open house");
                 defaultCanvas.SetActive(false);
                 time_manager.instance.pause = true;
-                Time.timeScale = 0;
                 houseCanvas.SetActive(true);
             }
 
@@ -99,7 +97,6 @@ public class weapon_manager : MonoBehaviour
             {
                 defaultCanvas.SetActive(false);
                 time_manager.instance.pause = true;
-                Time.timeScale = 0;
                 setPointWeapon(1);
             }
         }
@@ -107,7 +104,7 @@ public class weapon_manager : MonoBehaviour
 
     private void setPointWeapon(int n)
     {
-        Debug.Log("open point " + n);
+        //Debug.Log("open point " + n);
         pointCanvas.SetActive(true);
         for(int i = 0; i < weaponNum; i++)
         {
@@ -125,7 +122,6 @@ public class weapon_manager : MonoBehaviour
         {
             keyF.gameObject.SetActive(true);
             getWeapon = true;
-            //Debug.Log(money_manager.instance.money);
         }
 
         else if (col.tag == "house")
