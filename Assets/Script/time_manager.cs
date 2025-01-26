@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class time_manager : MonoBehaviour
 {
+    public int dayCycle = 180; // ³·¹ã ÁÖ±â
+
     public static time_manager instance;
     public float sec;
+    public int day; // ¸î ¹øÂ° ¹ã
     public bool pause = false;
     public bool night = false;
 
@@ -23,15 +26,18 @@ public class time_manager : MonoBehaviour
     void Start()
     {
         pause = false;
+        day = 0;
         sec = 0;
     }
 
     void Update()
     {
+        day = Mathf.FloorToInt(sec / (dayCycle * 2));
+
         if (!pause)
         {
             sec += Time.deltaTime;
-            if (Mathf.FloorToInt(sec / 180) % 2 == 1)
+            if (Mathf.FloorToInt(sec / dayCycle) % 2 == 1)
             {
                 night = true;
             }
@@ -39,8 +45,11 @@ public class time_manager : MonoBehaviour
             {
                 night = false;
             }
-            //Debug.Log(sec);
             transform.rotation = Quaternion.Euler(0, 0, sec - 90);
+        }
+        else
+        {
+            Time.timeScale = 0; // 
         }
     }
 }
