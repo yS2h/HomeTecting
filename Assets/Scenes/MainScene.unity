@@ -1123,10 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doubleButtonText: {fileID: 1977178735}
-<<<<<<< Updated upstream
   weaponInfoText: {fileID: 988475389}
-=======
->>>>>>> Stashed changes
   weaponButtonText:
   - {fileID: 1866796301}
   - {fileID: 699881312}
