@@ -55,7 +55,7 @@ public class game_manager : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            Time.timeScale = 2;
+            Time.timeScale = 30;
             doubleButtonText.text = "2X";
         }
         else 

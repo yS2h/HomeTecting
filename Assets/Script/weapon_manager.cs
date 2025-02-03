@@ -8,10 +8,11 @@ public class weapon_manager : MonoBehaviour
 {
     const int weaponNum = 12; // 무기 총 개수
 
-    bool[] weaponNow = new bool[weaponNum]; // 현재 무기를 구매한 상태인지
+    bool[] weaponNow = new bool[weaponNum] { false, false, false, false, true, true, false, true, false, true, true, false }; // 현재 무기를 구매한 상태인지 테스트를 위해 아직 활성화 못하는 무기들은 자체로 true
     int[] weaponPosition = new int[weaponNum] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 }; // 무기를 장착 할 수 있는 곳 번호
     int[] prices = new int[weaponNum] { 3000, 5000, 7000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 5000}; // 무기 가격
-    private bool getWeapon = false, setWeapon = false, setPoint1 = false;
+    private int[] selectedWeapon = new int[3] { -1, -1, -1 };
+    private bool getWeapon = false, setWeapon = false, setPoint1 = false, setPoint2 = false, setPoint3 = false;
     private GameObject storageDoor, houseDoor, keyF, pointButton, weaponImage;
     private GameObject defaultCanvas, storageCanvas, houseCanvas, pointCanvas;
     public TMP_Text doubleButtonText, weaponInfoText;
@@ -100,6 +101,20 @@ public class weapon_manager : MonoBehaviour
                 time_manager.instance.pause = true;
                 setPointWeapon(1);
             }
+
+            else if (setPoint2)
+            {
+                defaultCanvas.SetActive(false);
+                time_manager.instance.pause = true;
+                setPointWeapon(2);
+            }
+
+            else if (setPoint3)
+            {
+                defaultCanvas.SetActive(false);
+                time_manager.instance.pause = true;
+                setPointWeapon(3);
+            }
         }
     }
 
@@ -107,6 +122,13 @@ public class weapon_manager : MonoBehaviour
     {
         weaponInfoText.text = weaponClass[n].log();
         weaponImage.transform.GetComponent<Image>().sprite = pointButton.transform.GetChild(n).GetComponent<Image>().sprite;
+
+        if (setPoint1) 
+            selectedWeapon[0] = n;
+        else if (setPoint2) 
+            selectedWeapon[1] = n;
+        else if (setPoint3) 
+            selectedWeapon[2] = n;
     }
 
     private void setPointWeapon(int n)
@@ -120,6 +142,15 @@ public class weapon_manager : MonoBehaviour
             {
                 pointButton.transform.GetChild(i).GetComponent<Button>().interactable = true;
             }
+        }
+        weaponInfoText.text = "";
+        weaponImage.transform.GetComponent<Image>().sprite = null;
+        
+        int selected = selectedWeapon[n - 1];
+        if (selected != -1)
+        {
+            //Debug.Log(selected);
+            selectWeapon(selected);
         }
     }
 
@@ -142,6 +173,18 @@ public class weapon_manager : MonoBehaviour
             keyF.gameObject.SetActive(true);
             setPoint1 = true;
         }
+
+        else if (col.tag == "weaponPoint2")
+        {
+            keyF.gameObject.SetActive(true);
+            setPoint2 = true;
+        }
+
+        else if (col.tag == "weaponPoint3")
+        {
+            keyF.gameObject.SetActive(true);
+            setPoint3 = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
@@ -162,6 +205,18 @@ public class weapon_manager : MonoBehaviour
         {
             keyF.gameObject.SetActive(false);
             setPoint1 = false;
+        }
+
+        else if (col.tag == "weaponPoint2")
+        {
+            keyF.gameObject.SetActive(false);
+            setPoint2 = false;
+        }
+
+        else if (col.tag == "weaponPoint3")
+        {
+            keyF.gameObject.SetActive(false);
+            setPoint3 = false;
         }
     }
 
