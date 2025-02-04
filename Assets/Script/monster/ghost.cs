@@ -4,36 +4,27 @@ using UnityEngine;
 
 public class ghost : monster_manager
 {
-    void Awake()
-    {
-        liveMonster = GameObject.Find("live_monster");
-        deadMonster = GameObject.Find("dead_monster");
-    }
-
     private void init()
     {
+        monsterIndex = 0;
         health = 10;
         attackDamage = 10;
-        attackSpeed = 10;
+        attackDelay = 0.1f;
+        attackSpeed = 0.9f;
         moveSpeed = 10;
     }
 
-    void Start()
+    private void OnEnable()
     {
         init();
+        startMove();
     }
 
     void Update()
     {
-        if (!time_manager.instance.night)
+        if (health <= 0 || !time_manager.instance.night)
         {
-            health = 0;
-        }
-        if (health <= 0)
-        {
-            dead(0);
-            init();
-            gameObject.SetActive(false);
+            dead(returnMonsterIndex());
         }
     }
 }
