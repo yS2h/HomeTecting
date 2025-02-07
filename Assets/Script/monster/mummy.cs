@@ -22,13 +22,13 @@ public class mummy : monster_manager
 
     void Update()
     {
-        if (health <= 0 || !time_manager.instance.night)
+        if (health <= 0 || !time_manager.returnNight)
         {
             dead(returnMonsterIndex());
         }
     }
 
-    /*protected override IEnumerator move()
+    protected override IEnumerator move()
     {
         if (isMove) yield break;
 
@@ -42,9 +42,9 @@ public class mummy : monster_manager
 
         startAttack();
         isMove = false;
-    }*/
+    }
 
-    protected override IEnumerator move()
+    /*protected override IEnumerator move()
     {
         if (isMove) yield break;
 
@@ -57,7 +57,7 @@ public class mummy : monster_manager
                 yield return null;
             }
 
-            this.transform.Translate(Vector3.left * Time.deltaTime * moveSpeed * 30f / Time.timeScale);
+            this.transform.Translate(Vector3.left * Time.deltaTime * moveSpeed * 30f / time_manager.instance.timeScale);
 
             startTime = Time.time;
             while (Time.time - startTime < 1.29f)
@@ -68,5 +68,5 @@ public class mummy : monster_manager
 
         startAttack();
         isMove = false;
-    }
+    }*/
 }

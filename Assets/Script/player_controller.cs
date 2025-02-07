@@ -3,28 +3,77 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    private Rigidbody2D rb;
-    private Animator am;
+    private Rigidbody2D playerRigidbody;
+    private Animator playerAnimator;
+    private GameObject keyF;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        am = GetComponent<Animator>();
+        keyF = GameObject.Find("key_f");
+        playerRigidbody = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+        keyF.SetActive(false);
     }
 
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            am.SetInteger("input", 2);
-            rb.AddForce(transform.right * -1 * moveSpeed, ForceMode2D.Impulse);
+            playerAnimator.SetInteger("input", 2);
+            playerRigidbody.AddForce(transform.right * -1 * moveSpeed, ForceMode2D.Impulse);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            am.SetInteger("input", 1);
-            rb.AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
+            playerAnimator.SetInteger("input", 1);
+            playerRigidbody.AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
         }
         else
-            am.SetInteger("input", 0);
+        {
+            playerAnimator.SetInteger("input", 0);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!col.CompareTag("Untagged"))
+        {
+            keyF.SetActive(true);
+        }
+
+        switch (col.tag)
+        {
+            case "storage":
+                weapon_manager.getWeapon = true;
+                break;
+
+            case "house":
+                weapon_manager.setWeapon = true;
+                break;
+
+            case "weaponPoint1":
+                weapon_manager.setPoint1 = true;
+                break;
+
+            case "weaponPoint2":
+                weapon_manager.setPoint2 = true;
+                break;
+
+            case "weaponPoint3":
+                weapon_manager.setPoint3 = true;
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag != "Untagged")
+        {
+            keyF.gameObject.SetActive(false);
+            weapon_manager.getWeapon = false;
+            weapon_manager.setWeapon = false;
+            weapon_manager.setPoint1 = false;
+            weapon_manager.setPoint2 = false;
+            weapon_manager.setPoint3 = false;
+        }
     }
 }

@@ -7,30 +7,26 @@ using TMPro;
 public class house_manager : MonoBehaviour
 {
     public static house_manager instance;
-    public TMP_Text houseHealthText;
-    public float houseHealth;
 
-    void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-    }
+    private static float houseHealth;
+    private TMP_Text houseHealthText;
     
     void Start()
     {
+        houseHealthText = GameObject.Find("house_health_text").GetComponent<TMP_Text>();
         houseHealth = 10000f;
     }
+
+    public static float returnHealth() => houseHealth;
+
+    public static void attackHouse(float damage) => houseHealth -= damage;
 
     void Update()
     {
         houseHealthText.text = "now hp : " + houseHealth;
         if (houseHealth <= 0)
         {
-            time_manager.instance.pause = true;
+            time_manager.isPaused = true;
             Debug.Log("Game Over!");
         }        
     }

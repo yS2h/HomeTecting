@@ -56,7 +56,7 @@ public class monster_manager : MonoBehaviour
     {
         animator.SetInteger("state", 2);
         yield return new WaitForSeconds(attackDelay);
-        house_manager.instance.houseHealth -= attackDamage;
+        house_manager.attackHouse(attackDamage);
         yield return new WaitForSeconds(attackSpeed);
         startAttack();
         
@@ -113,24 +113,24 @@ public class monster_manager : MonoBehaviour
 
     void Update()
     {
-        if (time_manager.instance.night)
+        if (time_manager.returnNight)
         {
             if (callWave)
             {
                 callWave = false;
-                StartCoroutine(waveStart(time_manager.instance.day));
+                StartCoroutine(waveStart(time_manager.returnDay));
             }
         }
         else
         {
             callWave = true;
-            StopCoroutine(waveStart(time_manager.instance.day - 1));
+            StopCoroutine(waveStart(time_manager.returnDay - 1));
         }
     }
 
     IEnumerator waveStart(int n)
     {
-        float summonCycle = time_manager.instance.dayCycle / monsterWave[n][0];
+        float summonCycle = time_manager.returnDayCycle / monsterWave[n][0];
 
         for (int i = 1; i <= monsterNum; i++)
         {

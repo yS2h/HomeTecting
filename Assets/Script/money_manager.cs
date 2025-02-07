@@ -7,9 +7,11 @@ using TMPro;
 public class money_manager : MonoBehaviour
 {
     public static money_manager instance;
-    public TMP_Text moneyText, moneyText2;
-    public int money = 1000;
+    
+    private static int money; // private·Î º¯°æ
 
+    private TMP_Text defaultMoneyText, storageMoneyText;
+    
     void Awake()
     {
         if (instance != null)
@@ -18,20 +20,33 @@ public class money_manager : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        moneyText.text = "" + money;
-        moneyText2.text = "" + money;
+        defaultMoneyText = GameObject.Find("default_money_text").GetComponent<TMP_Text>();
+        storageMoneyText = GameObject.Find("storage_money_text").GetComponent<TMP_Text>();
+        money = 0;
     }
 
-    void Update()
+    public void textUpdate()
     {
-        money += Mathf.FloorToInt(Time.timeScale);
+        defaultMoneyText.text = "" + money;
+        storageMoneyText.text = "" + money;
+    }
 
-        moneyText.text = "" + money;
-        moneyText2.text = "" + money;
+    public static int returnMoney() => money;
+
+    public void plusMoney(int amount) => money += amount;
+    public void minusMoney(int amount) => money -= amount;
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            plusMoney(10000);
+        }
+
+        textUpdate();
     }
 }
