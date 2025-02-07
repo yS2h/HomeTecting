@@ -45,8 +45,7 @@ public class money_manager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.M))
         {
             plusMoney(10000);
+            textUpdate();
         }
-
-        textUpdate();
     }
 }

@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -948,8 +948,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 516268750}
-        m_TargetAssemblyTypeName: game_manager, Assembly-CSharp
+      - m_Target: {fileID: 1216885114}
+        m_TargetAssemblyTypeName: time_manager, Assembly-CSharp
         m_MethodName: pushPauseButton
         m_Mode: 1
         m_Arguments:
@@ -1108,8 +1108,8 @@ GameObject:
   - component: {fileID: 462075455}
   - component: {fileID: 462075454}
   - component: {fileID: 462075453}
-  - component: {fileID: 462075457}
   - component: {fileID: 462075459}
+  - component: {fileID: 462075460}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1234,19 +1234,6 @@ Transform:
   - {fileID: 1658451198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &462075457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462075451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d9d9dc0d64170419455fdfe15b6cb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
 --- !u!61 &462075459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1292,6 +1279,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1875, y: 0.390625}
   m_EdgeRadius: 0
+--- !u!114 &462075460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462075451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d9d9dc0d64170419455fdfe15b6cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
 --- !u!1 &505556529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1433,6 @@ GameObject:
   - component: {fileID: 516268749}
   - component: {fileID: 516268748}
   - component: {fileID: 516268747}
-  - component: {fileID: 516268750}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1491,18 +1490,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &516268750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516268746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d972810ff08c3a54cabf65ce4921f97a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &538553128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1572,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -1975,7 +1962,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushCloseButton
         m_Mode: 1
@@ -2410,7 +2397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -2543,7 +2530,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushWeaponButton
         m_Mode: 3
@@ -2676,7 +2663,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushCloseButton
         m_Mode: 1
@@ -2808,7 +2795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -3193,7 +3180,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -3548,7 +3535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushWeaponButton
         m_Mode: 3
@@ -4086,7 +4073,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1073739219}
-  - component: {fileID: 1073739218}
   m_Layer: 0
   m_Name: weapon_points
   m_TagString: Untagged
@@ -4094,18 +4080,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1073739218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073739217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5663ae58ea3710c409bac17b0080535f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1073739219
 Transform:
   m_ObjectHideFlags: 0
@@ -4834,7 +4808,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -4898,6 +4872,7 @@ GameObject:
   - component: {fileID: 1216885114}
   - component: {fileID: 1216885113}
   - component: {fileID: 1216885112}
+  - component: {fileID: 1216885118}
   m_Layer: 0
   m_Name: game_manager
   m_TagString: Untagged
@@ -5004,6 +4979,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1216885118
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216885111}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd153df489af3c444a9aa92c3632ed1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1254892474
 GameObject:
   m_ObjectHideFlags: 0
@@ -5267,7 +5263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushCloseButton
         m_Mode: 1
@@ -5635,9 +5631,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 516268750}
-        m_TargetAssemblyTypeName: game_manager, Assembly-CSharp
-        m_MethodName: pushResumeButton
+      - m_Target: {fileID: 1216885113}
+        m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
+        m_MethodName: pushCloseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5768,7 +5764,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushWeaponButton
         m_Mode: 3
@@ -6205,8 +6201,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 516268750}
-        m_TargetAssemblyTypeName: game_manager, Assembly-CSharp
+      - m_Target: {fileID: 1216885114}
+        m_TargetAssemblyTypeName: time_manager, Assembly-CSharp
         m_MethodName: pushDoubleButton
         m_Mode: 1
         m_Arguments:
@@ -7051,7 +7047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -7183,7 +7179,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -7315,7 +7311,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -7659,7 +7655,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -7792,7 +7788,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: pushWeaponButton
         m_Mode: 3
@@ -7924,7 +7920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1216885113}
         m_TargetAssemblyTypeName: weapon_manager, Assembly-CSharp
         m_MethodName: selectWeapon
         m_Mode: 3
@@ -8134,7 +8130,7 @@ GameObject:
   - component: {fileID: 1886129711}
   - component: {fileID: 1886129712}
   m_Layer: 0
-  m_Name: key_0
+  m_Name: key_f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
