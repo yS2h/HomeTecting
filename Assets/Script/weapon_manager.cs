@@ -8,7 +8,7 @@ public class weapon_manager : MonoBehaviour
 {
     const int weaponNum = 12; // 무기 총 개수
 
-    bool[] weaponNow = new bool[weaponNum] { true, true, false, false, false, true, false, true, false, false, true, true }; // 현재 무기를 구매한 상태인지
+    public bool[] weaponNow = new bool[weaponNum]; // 현재 무기를 구매한 상태인지
     int[] weaponPosition = new int[weaponNum] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 }; // 무기를 장착 할 수 있는 곳 번호
     int[] prices = new int[weaponNum] { 3000, 5000, 7000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 5000}; // 무기 가격
     public static bool getWeapon = false, setWeapon = false, setPoint1 = false, setPoint2 = false, setPoint3 = false;
@@ -58,6 +58,7 @@ public class weapon_manager : MonoBehaviour
         weaponInfoText = GameObject.Find("weapon_info_text").GetComponent<TMP_Text>();
         weaponList = GameObject.Find("weapon_list");
 
+        Debug.Log(weaponList);
         defaultCanvas.SetActive(true);
         storageCanvas.SetActive(false);
         houseCanvas.SetActive(false);
