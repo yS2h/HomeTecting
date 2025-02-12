@@ -14,7 +14,7 @@ public class weapon_manager : MonoBehaviour
     public static bool getWeapon = false, setWeapon = false, setPoint1 = false, setPoint2 = false, setPoint3 = false;
     private int[] selectedWeapon = new int[3] { -1, -1, -1 };
     private GameObject storageDoor, houseDoor, pointButton, weaponImage;
-    private GameObject defaultCanvas, storageCanvas, houseCanvas, pointCanvas;
+    private GameObject parentCanvas, defaultCanvas, storageCanvas, houseCanvas, pointCanvas, pauseCanvas;
     private TMP_Text weaponInfoText;
     public TMP_Text[] weaponButtonText = new TMP_Text[weaponNum];
 
@@ -46,10 +46,12 @@ public class weapon_manager : MonoBehaviour
     {
         storageDoor = GameObject.Find("storage_door");
         houseDoor = GameObject.Find("house_door");
-        defaultCanvas = GameObject.Find("default_canvas");
-        storageCanvas = GameObject.Find("storage_canvas");
-        houseCanvas = GameObject.Find("house_canvas");
-        pointCanvas = GameObject.Find("point_canvas");
+        parentCanvas = GameObject.Find("canvas");
+        defaultCanvas = parentCanvas.transform.GetChild(0).gameObject;
+        pauseCanvas = parentCanvas.transform.GetChild(1).gameObject;
+        houseCanvas = parentCanvas.transform.GetChild(2).gameObject;
+        storageCanvas = parentCanvas.transform.GetChild(3).gameObject;
+        pointCanvas = parentCanvas.transform.GetChild(4).gameObject;
         pointButton = GameObject.Find("point_weapon_button");
         weaponImage = GameObject.Find("weapon_image");
         weaponInfoText = GameObject.Find("weapon_info_text").GetComponent<TMP_Text>();
@@ -152,6 +154,7 @@ public class weapon_manager : MonoBehaviour
         storageCanvas.SetActive(false);
         houseCanvas.SetActive(false);
         pointCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
         defaultCanvas.SetActive(true);
         time_manager.isPaused = false;
     }
