@@ -9,6 +9,8 @@ TagManager:
   - weaponPoint1
   - weaponPoint2
   - weaponPoint3
+  - ground
+  - monster
   layers:
   - Default
   - TransparentFX

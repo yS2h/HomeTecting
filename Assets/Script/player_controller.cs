@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.CompareTag("Untagged"))
+        if (!col.CompareTag("Untagged") && !col.CompareTag("ground") && !col.CompareTag("monster"))
         {
             keyF.SetActive(true);
         }
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.tag != "Untagged")
+        if (!col.CompareTag("Untagged") && !col.CompareTag("ground") && !col.CompareTag("monster"))
         {
             keyF.gameObject.SetActive(false);
             weapon_manager.getWeapon = false;

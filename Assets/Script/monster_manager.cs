@@ -18,7 +18,7 @@ public class monster_manager : MonoBehaviour
 
     protected private Animator animator;
 
-    protected float houseX = 6f;
+    protected float houseX = 4f;
     protected private int monsterIndex;
     protected private int health;
     protected private float attackDamage;
@@ -51,6 +51,8 @@ public class monster_manager : MonoBehaviour
             monsterWave.Add(new int[] { 15, 2, 13, 0, 0, 0, 0, 0, 0, 0, 0 }); // wave 2
         }
     }
+
+    public void damaged(int n) => health -= n;
 
     protected IEnumerator attack()
     {
@@ -106,7 +108,7 @@ public class monster_manager : MonoBehaviour
         {
             newMonster = monsterDeadList[n].Pop();
         }
-        newMonster.transform.position = new Vector3(15f, -1.23f, 0f);
+        newMonster.transform.position = new Vector3(15f, -1f, -4f);
         newMonster.transform.SetParent(liveMonster.transform);
         newMonster.SetActive(true);
     }

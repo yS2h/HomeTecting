@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3c8f59e436ddfd4e8deab09b46f6b41
+guid: 85bdb2a8d0cd209479b6f3f665fddc09
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,70 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: mummy_walk_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 17
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5015924, y: 0.6038279}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d38446221096674a822301bde3634f7
-      internalID: -512133305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mummy_walk_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 1
-        width: 17
-        height: 24
-      alignment: 9
-      pivot: {x: 0.4989936, y: 0.6029069}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b55f86f8eaab91148be993115455ffd9
-      internalID: -1478705980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mummy_walk_2
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 1
-        width: 17
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5012723, y: 0.6039749}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0100620253655b24fad2b416ed09e43c
-      internalID: -653242136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -182,10 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      mummy_walk_0: -512133305
-      mummy_walk_1: -1478705980
-      mummy_walk_2: -653242136
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

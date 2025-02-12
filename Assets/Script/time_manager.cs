@@ -98,6 +98,7 @@ public class time_manager : MonoBehaviour
     public static float returnSec => sec;
     public static int returnDay => day;
     public static int returnDayCycle => dayCycle;
+    public static int returnTimeScale => timeScale;
 
     public static bool isPaused
     {
