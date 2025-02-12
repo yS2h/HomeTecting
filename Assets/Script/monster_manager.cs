@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class monster_manager : MonoBehaviour
 {
-    protected const int monsterNum = 10; // ÃÑ ¸ó½ºÅÍ °³¼ö (»ó¼ö)
+    protected const int monsterNum = 10; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½)
 
-    private static Stack<GameObject>[] monsterDeadList; // Á×Àº ¸ó½ºÅÍ¸¦ Àç»ç¿ëÇÏ±â À§ÇØ Á×À¸¸é ºñÈ°¼ºÈ­ ÈÄ ÀúÀå
+    private static Stack<GameObject>[] monsterDeadList; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private static bool deadListInit = false;
 
-    private static List<int[]> monsterWave = new List<int[]>(); // °¢ ¿þÀÌºê º° ³ª¿Ã ¸ó½ºÅÍµé ¸®½ºÆ®
+    private static List<int[]> monsterWave = new List<int[]>(); // ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 
-    protected GameObject liveMonster, deadMonster; // ÄÚµå ÁøÇà »ó ÀÇ¹Ì´Â ¾øÁö¸¸ ±¸ºÐÀ» À§ÇØ ¸¸µé¾î³õÀº empty ¿ÀºêÁ§Æ®
-    public GameObject[] monsterPrefab = new GameObject[monsterNum]; // °¢ ¸ó½ºÅÍ ÇÁ¸®ÆÕ {À¯·É, ¹Ì¶ó, Ã³³à±Í½Å, °­½Ã, ... Ãß°¡¿¹Á¤}
+    protected GameObject liveMonster, deadMonster; // ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç¹Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ empty ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+    public GameObject[] monsterPrefab = new GameObject[monsterNum]; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {ï¿½ï¿½ï¿½ï¿½, ï¿½Ì¶ï¿½, Ã³ï¿½ï¿½Í½ï¿½, ï¿½ï¿½ï¿½ï¿½, ... ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½}
 
     private bool callWave;
 
@@ -46,8 +46,8 @@ public class monster_manager : MonoBehaviour
             {
                 monsterDeadList[i] = new Stack<GameObject>();
             }
-            //monsterWave.Add(new int[] {ÀÌ¹ø ¿þÀÌºê ÃÑ ¸ó½ºÅÍ ¼ýÀÚ, À¯·É, ¹Ì¶ó, Ã³³à±Í½Å, °­½Ã, ... }):
-            monsterWave.Add(new int[] { 10, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0 }); // wave 1
+            //monsterWave.Add(new int[] {ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½Ì¶ï¿½, Ã³ï¿½ï¿½Í½ï¿½, ï¿½ï¿½ï¿½ï¿½, ... }):
+            monsterWave.Add(new int[] { 10, 1, 0, 9, 0, 0, 0, 0, 0, 0, 0 }); // wave 1
             monsterWave.Add(new int[] { 15, 2, 13, 0, 0, 0, 0, 0, 0, 0, 0 }); // wave 2
         }
     }

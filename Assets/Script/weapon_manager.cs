@@ -58,7 +58,6 @@ public class weapon_manager : MonoBehaviour
         weaponInfoText = GameObject.Find("weapon_info_text").GetComponent<TMP_Text>();
         weaponList = GameObject.Find("weapon_list");
 
-        Debug.Log(weaponList);
         defaultCanvas.SetActive(true);
         storageCanvas.SetActive(false);
         houseCanvas.SetActive(false);
