@@ -15,6 +15,7 @@ public class weapon_manager : MonoBehaviour
     private int[] selectedWeapon = new int[3] { -1, -1, -1 };
     private GameObject storageDoor, houseDoor, pointButton, weaponImage, weaponList;
     private GameObject parentCanvas, defaultCanvas, storageCanvas, houseCanvas, pointCanvas, pauseCanvas;
+    private GameObject weapon1, weapon2, weapon3;
     private TMP_Text weaponInfoText;
     public TMP_Text[] weaponButtonText = new TMP_Text[weaponNum];
     private GameObject[] weaponObjectList = new GameObject[weaponNum];
@@ -57,6 +58,9 @@ public class weapon_manager : MonoBehaviour
         weaponImage = GameObject.Find("weapon_image");
         weaponInfoText = GameObject.Find("weapon_info_text").GetComponent<TMP_Text>();
         weaponList = GameObject.Find("weapon_list");
+        weapon1 = GameObject.Find("weapon1");
+        weapon2 = GameObject.Find("weapon2");
+        weapon3 = GameObject.Find("weapon3");
 
         defaultCanvas.SetActive(true);
         storageCanvas.SetActive(false);
@@ -82,6 +86,10 @@ public class weapon_manager : MonoBehaviour
         weaponClass[9] = new weapon("amulet", 10, 10, 10, 10, "i'm amulet");
         weaponClass[10] = new weapon("javelin", 10, 10, 10, 10, "i'm javelin");
         weaponClass[11] = new weapon("flameThrower", 10, 10, 10, 10, "i'm flame thrower");
+
+        //weapon1.transform.GetComponent<Image>().sprite = null;
+        //weapon2.transform.GetComponent<Image>().sprite = null;
+        //weapon3.transform.GetComponent<Image>().sprite = null;
     }
 
     void Update()
@@ -129,11 +137,20 @@ public class weapon_manager : MonoBehaviour
         weaponInfoText.text = weaponClass[n].log();
         weaponImage.transform.GetComponent<Image>().sprite = pointButton.transform.GetChild(n).GetComponent<Image>().sprite;
         if (setPoint1)
+        {
             selectedWeapon[0] = n;
+            weapon1.transform.GetComponent<Image>().sprite = pointButton.transform.GetChild(n).GetComponent<Image>().sprite;
+        }
         else if (setPoint2)
+        {
             selectedWeapon[1] = n;
+            weapon2.transform.GetComponent<Image>().sprite = pointButton.transform.GetChild(n).GetComponent<Image>().sprite;
+        }
         else if (setPoint3)
+        {
             selectedWeapon[2] = n;
+            weapon3.transform.GetComponent<Image>().sprite = pointButton.transform.GetChild(n).GetComponent<Image>().sprite;
+        }
     }
 
     private void setPointWeapon(int n)
