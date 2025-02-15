@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class player_controller : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    public static float moveSpeed = 2f;
     private Rigidbody2D playerRigidbody;
     private Animator playerAnimator;
     private GameObject keyF;

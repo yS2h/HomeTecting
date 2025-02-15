@@ -100,6 +100,11 @@ public class time_manager : MonoBehaviour
     public static int returnDayCycle => dayCycle;
     public static int returnTimeScale => timeScale;
 
+    public static void skipDay() 
+    {
+        sec = (day * 2 + 3) * dayCycle;
+    }
+
     public static bool isPaused
     {
         get { return instance.pause; }

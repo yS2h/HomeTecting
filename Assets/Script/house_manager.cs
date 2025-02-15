@@ -30,4 +30,9 @@ public class house_manager : MonoBehaviour
             Debug.Log("Game Over!");
         }        
     }
+
+    public void skipDayButton() 
+    {
+        time_manager.skipDay();
+    }
 }
