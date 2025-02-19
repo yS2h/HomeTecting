@@ -22,10 +22,7 @@ public class mummy : monster_manager
 
     void Update()
     {
-        if (health <= 0 || !time_manager.returnNight)
-        {
-            dead(returnMonsterIndex());
-        }
+        commonUpdate();
     }
 
     protected override IEnumerator move()

@@ -22,9 +22,6 @@ public class ghost : monster_manager
 
     void Update()
     {
-        if (health <= 0 || !time_manager.returnNight)
-        {
-            dead(returnMonsterIndex());
-        }
+        commonUpdate();
     }
 }

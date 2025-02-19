@@ -47,12 +47,16 @@ public class monster_manager : MonoBehaviour
                 monsterDeadList[i] = new Stack<GameObject>();
             }
             //monsterWave.Add(new int[] {�̹� ���̺� �� ���� ����, ����, �̶�, ó��ͽ�, ����, ... }):
-            monsterWave.Add(new int[] { 10, 1, 0, 9, 0, 0, 0, 0, 0, 0, 0 }); // wave 1
+            monsterWave.Add(new int[] { 15, 1, 0, 14, 0, 0, 0, 0, 0, 0, 0 }); // wave 1
             monsterWave.Add(new int[] { 15, 2, 13, 0, 0, 0, 0, 0, 0, 0, 0 }); // wave 2
         }
     }
 
-    public void damaged(int n) => health -= n;
+    public void damaged(int n) 
+    {
+        Debug.Log(this.gameObject.name + " damaged : " + n + " now HP : " + health);
+        health -= n;
+    }
 
     protected IEnumerator attack()
     {
@@ -85,9 +89,31 @@ public class monster_manager : MonoBehaviour
 
     protected int returnMonsterIndex() => monsterIndex;
 
+    public int returnHealth() => health;
+
+    protected void commonUpdate() 
+    {
+        if (!attack_manager.selectTarget) 
+        {
+            if (attack_manager.targetMonster != this.gameObject) 
+            {
+                if (attack_manager.targetMonster.transform.position.x > this.gameObject.transform.position.x) 
+                {
+                    attack_manager.findTarget();
+                }
+            }
+        }
+        if (health <= 0 || !time_manager.returnNight)
+        {
+            dead(returnMonsterIndex());
+        }
+    }
+
     protected void dead(int n)
     {
         this.gameObject.SetActive(false);
+        attack_manager.liveMonsterList.Remove(this.gameObject);
+        attack_manager.findTarget();
         animator.SetInteger("state", 1);
         StopCoroutine(move());
         StopCoroutine(attack());
@@ -110,6 +136,8 @@ public class monster_manager : MonoBehaviour
         }
         newMonster.transform.position = new Vector3(15f, -1f, -4f);
         newMonster.transform.SetParent(liveMonster.transform);
+        attack_manager.liveMonsterList.Add(newMonster);
+        attack_manager.findTarget();
         newMonster.SetActive(true);
     }
 

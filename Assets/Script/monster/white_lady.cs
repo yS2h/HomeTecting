@@ -6,12 +6,12 @@ public class white_lady : monster_manager
 {
     private void init()
     {
-        monsterIndex = 0;
+        monsterIndex = 2;
         health = 10;
         attackDamage = 10;
         attackDelay = 0.1f;
         attackSpeed = 0.9f;
-        moveSpeed = 10;
+        moveSpeed = 30;
     }
 
     private void OnEnable()
@@ -22,9 +22,6 @@ public class white_lady : monster_manager
 
     void Update()
     {
-        if (health <= 0 || !time_manager.returnNight)
-        {
-            dead(returnMonsterIndex());
-        }
+        commonUpdate();
     }
 }

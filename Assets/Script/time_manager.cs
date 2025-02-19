@@ -10,7 +10,7 @@ public class time_manager : MonoBehaviour
 
     public int myTimeSpeed;
     
-    public static int dayCycle = 180; // Ё╥╧Ц аж╠Б
+    public static int dayCycle = 180; // О©╫О©╫О©╫О©╫ О©╫ж╠О©╫
     private static int timeScale;
     private static float sec;
     private static int day;
@@ -102,7 +102,7 @@ public class time_manager : MonoBehaviour
 
     public static void skipDay() 
     {
-        sec = (day * 2 + 3) * dayCycle;
+        sec = (day * 2 + 1) * dayCycle;
     }
 
     public static bool isPaused
