@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5766633797274803265}
   - component: {fileID: 4000074706144380280}
   m_Layer: 0
-  m_Name: salt_grain
+  m_Name: salt_paritcle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

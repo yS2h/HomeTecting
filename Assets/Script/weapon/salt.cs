@@ -19,12 +19,12 @@ public class salt : basket
     {
         if (col.CompareTag("ground"))
         {
-            grainStack.Push(this.gameObject);
+            particleStack.Push(this.gameObject);
             this.gameObject.SetActive(false);
         }
         else if (col.CompareTag("monster")) 
         {
-            grainStack.Push(this.gameObject);
+            particleStack.Push(this.gameObject);
             this.gameObject.SetActive(false);
             col.GetComponent<monster_manager>().damaged(2);
         }
