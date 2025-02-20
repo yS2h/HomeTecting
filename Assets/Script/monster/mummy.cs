@@ -14,10 +14,23 @@ public class mummy : monster_manager
         moveSpeed = 10;
     }
 
+    protected void Start()
+    {
+        monsterRenderer = GetComponent<Renderer>();
+        if (monsterRenderer != null)
+        {
+            objectColor = monsterRenderer.material.color;
+        }
+    }
+
     private void OnEnable()
     {
         init();
         startMove();
+        if (monsterRenderer != null)
+        {
+            monsterRenderer.material.color = objectColor;
+        }
     }
 
     void Update()

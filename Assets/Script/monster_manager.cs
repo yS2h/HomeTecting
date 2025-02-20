@@ -29,6 +29,9 @@ public class monster_manager : MonoBehaviour
     protected bool isMove = false;
     protected bool isAttack = false;
 
+    protected private Renderer monsterRenderer;
+    protected private Color objectColor;
+
     private void Awake()
     {
         liveMonster = GameObject.Find("live_monster");
@@ -56,6 +59,20 @@ public class monster_manager : MonoBehaviour
     {
         Debug.Log(this.gameObject.name + " damaged : " + n + " now HP : " + health);
         health -= n;
+
+        if (gameObject.activeInHierarchy && monsterRenderer != null)
+        {
+            monsterRenderer.material.color = Color.Lerp(Color.red, Color.white, 0.5f);
+            StartCoroutine(ReturnToOriginalColor(objectColor));
+        }
+    }
+
+    private IEnumerator ReturnToOriginalColor(Color originalColor)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        if (gameObject.activeInHierarchy && monsterRenderer != null)
+            monsterRenderer.material.color = originalColor;
     }
 
     protected IEnumerator attack()
